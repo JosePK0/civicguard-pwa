@@ -6,3 +6,4 @@
 | `CIV-7` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Crear proyecto Scrum en Jira para CivicGuard PWA, configurar tablero, épicas, historias y los 4 sprints semanales |
 | `CIV-8` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Configurar docker-compose.yml con MySQL 8.0, phpMyAdmin y script start-dev.sh para orquestación de puertos locales (8000 y 4200) |
 | `CIV-9` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Elaborar Tabla Comparativa Oficial de arquitecturas (Tradicional, SOA, Nativa, Multiplataforma y PWA) aplicada a CivicGuard |
+| `CIV-10` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Elaborar Reporte de Configuración del Entorno con bitácora de puertos, supresión de caché HTTP y túnel HTTPS ngrok |
