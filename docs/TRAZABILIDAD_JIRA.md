@@ -11,3 +11,4 @@
 | `CIV-12` | Sprint 1 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar NoHttpCacheMiddleware en Laravel (Cache-Control: no-store, no-cache, must-revalidate, Pragma: no-cache) para suprimir cachés HTTP clásicas |
 | `CIV-13` | Sprint 1 | Cristian Isaac Llanes Puc | @LlanesGood | Registrar NoHttpCacheMiddleware en el grupo de rutas API de bootstrap/app.php y crear endpoint GET /api/v1/health |
 | `CIV-14` | Sprint 1 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Inicializar proyecto Angular SPA con TypeScript estricto, angular.json y configuración de compilación de producción |
+| `CIV-15` | Sprint 1 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Configurar proxy.conf.json en Angular para encaminar /api/* hacia http://127.0.0.1:8000 bajo un mismo origen seguro |
