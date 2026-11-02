@@ -8,3 +8,4 @@
 | `CIV-9` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Elaborar Tabla Comparativa Oficial de arquitecturas (Tradicional, SOA, Nativa, Multiplataforma y PWA) aplicada a CivicGuard |
 | `CIV-10` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Elaborar Reporte de Configuración del Entorno con bitácora de puertos, supresión de caché HTTP y túnel HTTPS ngrok |
 | `CIV-11` | Sprint 1 | Cristian Isaac Llanes Puc | @LlanesGood | Configurar proyecto base Laravel API Headless, conexión MySQL civicguard_db y variables de entorno seguras (.env.example) |
+| `CIV-12` | Sprint 1 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar NoHttpCacheMiddleware en Laravel (Cache-Control: no-store, no-cache, must-revalidate, Pragma: no-cache) para suprimir cachés HTTP clásicas |
