@@ -7,3 +7,4 @@
 | `CIV-8` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Configurar docker-compose.yml con MySQL 8.0, phpMyAdmin y script start-dev.sh para orquestación de puertos locales (8000 y 4200) |
 | `CIV-9` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Elaborar Tabla Comparativa Oficial de arquitecturas (Tradicional, SOA, Nativa, Multiplataforma y PWA) aplicada a CivicGuard |
 | `CIV-10` | Sprint 1 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Elaborar Reporte de Configuración del Entorno con bitácora de puertos, supresión de caché HTTP y túnel HTTPS ngrok |
+| `CIV-11` | Sprint 1 | Cristian Isaac Llanes Puc | @LlanesGood | Configurar proyecto base Laravel API Headless, conexión MySQL civicguard_db y variables de entorno seguras (.env.example) |
