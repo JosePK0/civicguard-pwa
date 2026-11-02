@@ -13,3 +13,4 @@
 | `CIV-14` | Sprint 1 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Inicializar proyecto Angular SPA con TypeScript estricto, angular.json y configuración de compilación de producción |
 | `CIV-15` | Sprint 1 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Configurar proxy.conf.json en Angular para encaminar /api/* hacia http://127.0.0.1:8000 bajo un mismo origen seguro |
 | `CIV-16` | Sprint 1 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Definir contratos de dominio en TypeScript estricto (incident.model.ts) con estados de sincronización y coordenadas geográficas |
+| `CIV-17` | Sprint 1 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar y vincular archivo de metadatos public/manifest.json con display standalone, colores corporativos y orientación |
