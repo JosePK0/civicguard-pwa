@@ -16,3 +16,4 @@
 | `CIV-17` | Sprint 1 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar y vincular archivo de metadatos public/manifest.json con display standalone, colores corporativos y orientación |
 | `CIV-18` | Sprint 1 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Maquetar Application Shell inmutable en src/index.html y estilos base institucionales en src/styles.css |
 | `CIV-19` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Programar e inyectar el Service Worker (public/sw.js) en la raíz del proyecto para controlar el ámbito (Scope) global '/' |
+| `CIV-20` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar evento asíncrono install en sw.js con pre-cacheo atómico del Application Shell y llamada a self.skipWaiting() |
