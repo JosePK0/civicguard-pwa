@@ -23,3 +23,4 @@
 | `CIV-24` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Generar recursos visuales adaptativos en public/icons/ (icon-192x192.png, icon-512x512.png e icon-maskable-512x512.png) |
 | `CIV-25` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Configurar Splash-screen y Home-screen nativas mediante Maskable Icons (purpose: any y maskable) en manifest.json |
 | `CIV-26` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Implementar modelo de renderizado mixto: placeholders estructurales estáticos en index.html e hidratación CSR en Angular |
+| `CIV-27` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar barra superior del Application Shell con indicadores en tiempo real de estado de red (Online / Modo Avión) y estado del SW |
