@@ -17,3 +17,4 @@
 | `CIV-18` | Sprint 1 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Maquetar Application Shell inmutable en src/index.html y estilos base institucionales en src/styles.css |
 | `CIV-19` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Programar e inyectar el Service Worker (public/sw.js) en la raíz del proyecto para controlar el ámbito (Scope) global '/' |
 | `CIV-20` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar evento asíncrono install en sw.js con pre-cacheo atómico del Application Shell y llamada a self.skipWaiting() |
+| `CIV-21` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar evento asíncrono activate en sw.js con purga automática de versiones obsoletas de caché y self.clients.claim() |
