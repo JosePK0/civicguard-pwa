@@ -22,3 +22,4 @@
 | `CIV-23` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar SwManagerService (sw-manager.service.ts) para registro del Service Worker, monitoreo de estado y canal MessageChannel |
 | `CIV-24` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Generar recursos visuales adaptativos en public/icons/ (icon-192x192.png, icon-512x512.png e icon-maskable-512x512.png) |
 | `CIV-25` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Configurar Splash-screen y Home-screen nativas mediante Maskable Icons (purpose: any y maskable) en manifest.json |
+| `CIV-26` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Implementar modelo de renderizado mixto: placeholders estructurales estáticos en index.html e hidratación CSR en Angular |
