@@ -27,3 +27,4 @@
 | `CIV-28` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Crear migración relacional de tabla users y migración add_role_and_token_to_users_table para operadores de campo y despachadores |
 | `CIV-29` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo User con roles operativos (dispatcher / operator), hashing bcrypt de contraseñas y tokens de sesión |
 | `CIV-30` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar AuthController en Laravel (/api/v1/auth/login, /register, /me, /logout) con respuestas JSON sin caché HTTP |
+| `CIV-31` | Sprint 2 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar el Mapeo del Ciclo de Vida del Service Worker (docs/semana-2-mapeo-ciclo-vida-sw.md) con diagramas de transición |
