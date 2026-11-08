@@ -19,3 +19,4 @@
 | `CIV-20` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar evento asíncrono install en sw.js con pre-cacheo atómico del Application Shell y llamada a self.skipWaiting() |
 | `CIV-21` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar evento asíncrono activate en sw.js con purga automática de versiones obsoletas de caché y self.clients.claim() |
 | `CIV-22` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar pre-almacenamiento recursivo de bundles JS/CSS de Angular en Cache API para garantizar arranque en frío sin red |
+| `CIV-23` | Sprint 2 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar SwManagerService (sw-manager.service.ts) para registro del Service Worker, monitoreo de estado y canal MessageChannel |
