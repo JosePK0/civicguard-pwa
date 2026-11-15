@@ -32,3 +32,4 @@
 | `CIV-33` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo Eloquent Incident con casts tipados para coordenadas geográficas y marca temporal de sincronización |
 | `CIV-34` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear StoreIncidentRequest con validación estricta de coordenadas GPS (-90..90, -180..180), categorías urbanas y fotografías base64 |
 | `CIV-35` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentService en Laravel con lógica de upsert idempotente por client_uuid para evitar duplicados en reintentos de red |
+| `CIV-36` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentController RESTful (GET/POST /api/v1/incidents, PATCH /status, POST /sync) con soporte de lotes offline |
