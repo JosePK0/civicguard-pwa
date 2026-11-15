@@ -30,3 +30,4 @@
 | `CIV-31` | Sprint 2 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar el Mapeo del Ciclo de Vida del Service Worker (docs/semana-2-mapeo-ciclo-vida-sw.md) con diagramas de transición |
 | `CIV-32` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear migración de tabla incidents con client_uuid único (idempotencia offline), categoría, severidad, latitud, longitud y foto |
 | `CIV-33` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo Eloquent Incident con casts tipados para coordenadas geográficas y marca temporal de sincronización |
+| `CIV-34` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear StoreIncidentRequest con validación estricta de coordenadas GPS (-90..90, -180..180), categorías urbanas y fotografías base64 |
