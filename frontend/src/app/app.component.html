@@ -1,0 +1,626 @@
+@if (!currentUser) {
+  <!-- ========================================================================
+       PANTALLA DE INICIO DE SESIÓN / REGISTRO CORPORATIVO
+       ======================================================================== -->
+  <div class="auth-layout">
+    <aside class="auth-hero">
+      <div class="auth-hero-content">
+        <div class="brand-lockup">
+          <div class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <h1>CivicGuard</h1>
+            <span>Sistema de Gestión de Infraestructura Urbana</span>
+          </div>
+        </div>
+
+        <h2>Monitoreo y respuesta ante incidencias urbanas en tiempo real</h2>
+        <p>
+          Plataforma operativa para brigadas de campo y centros de supervisión municipal.
+          Diseñada para continuar operando en zonas sin cobertura celular con sincronización
+          automática y geolocalización de precisión.
+        </p>
+
+        <div class="hero-features">
+          <div class="hero-feature-item">
+            <span class="feature-dot"></span>
+            <div>
+              <strong>Operación Continua en Campo</strong>
+              <small>Captura de reportes y evidencia fotográfica aún sin conexión a internet.</small>
+            </div>
+          </div>
+          <div class="hero-feature-item">
+            <span class="feature-dot"></span>
+            <div>
+              <strong>Georreferenciación Exacta</strong>
+              <small>Trazabilidad por coordenadas satelitales y seguimiento de atención.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h3>{{ authMode === 'login' ? 'Iniciar Sesión' : 'Registro de Operador' }}</h3>
+          <p>
+            {{
+              authMode === 'login'
+                ? 'Ingresa tus credenciales institucionales para acceder al panel.'
+                : 'Completa tus datos para dar de alta tu cuenta de brigada.'
+            }}
+          </p>
+        </div>
+
+        @if (errorBanner) {
+          <div class="banner banner-error" role="alert">
+            <span>{{ errorBanner }}</span>
+            <button type="button" (click)="errorBanner = ''">✕</button>
+          </div>
+        }
+
+        <form (ngSubmit)="submitAuth()" class="auth-form">
+          @if (authMode === 'register') {
+            <div class="field">
+              <label for="reg-name">Nombre Completo</label>
+              <input
+                id="reg-name"
+                type="text"
+                name="registerName"
+                [(ngModel)]="registerName"
+                placeholder="Ej. Ing. Roberto Salazar"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="reg-dept">Unidad / Departamento</label>
+              <input
+                id="reg-dept"
+                type="text"
+                name="registerDepartment"
+                [(ngModel)]="registerDepartment"
+                placeholder="Ej. Brigada de Infraestructura Vial"
+                required
+              />
+            </div>
+          }
+
+          <div class="field">
+            <label for="auth-email">Correo Institucional</label>
+            <input
+              id="auth-email"
+              type="email"
+              name="loginEmail"
+              [(ngModel)]="loginEmail"
+              placeholder="usuario@civicguard.gob.mx"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="auth-pass">Contraseña</label>
+            <input
+              id="auth-pass"
+              type="password"
+              name="loginPassword"
+              [(ngModel)]="loginPassword"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="isAuthenticating">
+            {{
+              isAuthenticating
+                ? 'Verificando...'
+                : authMode === 'login'
+                  ? 'Acceder a la Plataforma'
+                  : 'Crear Cuenta'
+            }}
+          </button>
+        </form>
+
+        <div class="auth-switch">
+          @if (authMode === 'login') {
+            <span>¿Nuevo integrante de brigada?</span>
+            <button type="button" class="link-btn" (click)="authMode = 'register'">
+              Solicitar registro
+            </button>
+          } @else {
+            <span>¿Ya cuentas con usuario?</span>
+            <button type="button" class="link-btn" (click)="authMode = 'login'">
+              Iniciar sesión
+            </button>
+          }
+        </div>
+
+        <div class="demo-access">
+          <span class="demo-label">Acceso rápido para evaluación:</span>
+          <div class="demo-buttons">
+            <button type="button" class="btn btn-subtle btn-sm" (click)="quickDemoLogin('supervisor')">
+              Entrar como Supervisor
+            </button>
+            <button type="button" class="btn btn-subtle btn-sm" (click)="quickDemoLogin('operador')">
+              Entrar como Operador
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+} @else {
+  <!-- ========================================================================
+       APLICACIÓN EMPRESARIAL PRINCIPAL (AUTENTICADA)
+       ======================================================================== -->
+  <div class="app-workspace">
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="brand-compact">
+          <div class="logo-mark-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <span class="brand-name">CivicGuard</span>
+            <span class="brand-dept">{{ currentUser.department }}</span>
+          </div>
+        </div>
+
+        <nav class="nav-tabs" aria-label="Navegación principal">
+          <button
+            type="button"
+            class="nav-tab"
+            [class.active]="activeView === 'dashboard'"
+            (click)="switchView('dashboard')"
+          >
+            Centro de Monitoreo
+          </button>
+          <button
+            type="button"
+            class="nav-tab"
+            [class.active]="activeView === 'create'"
+            (click)="switchView('create')"
+          >
+            Nuevo Reporte
+          </button>
+        </nav>
+      </div>
+
+      <div class="navbar-right">
+        <span class="conn-indicator" [class.online]="isOnline" [class.offline]="!isOnline">
+          <span class="conn-dot"></span>
+          {{ isOnline ? 'Conectado' : 'Modo Sin Conexión' }}
+        </span>
+
+        @if (pendingSyncCount > 0) {
+          <span class="sync-counter" title="Reportes pendientes de sincronización">
+            {{ pendingSyncCount }} en cola
+          </span>
+        }
+
+        <button
+          type="button"
+          class="icon-btn"
+          title="Activar notificaciones de reportes"
+          (click)="enableNotifications()"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+          </svg>
+        </button>
+
+        @if (deferredInstallPrompt) {
+          <button type="button" class="btn btn-primary btn-sm" (click)="promptInstallPwa()">
+            Instalar App
+          </button>
+        }
+
+        <div class="user-menu">
+          <div class="user-info">
+            <strong>{{ currentUser.name }}</strong>
+            <small>{{ currentUser.role | uppercase }}</small>
+          </div>
+          <button type="button" class="btn btn-subtle btn-sm" (click)="logout()">
+            Salir
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- NOTIFICACIONES DE ESTADO -->
+      @if (statusBanner) {
+        <div class="banner banner-success" role="status">
+          <span>{{ statusBanner }}</span>
+          <button type="button" (click)="statusBanner = ''">✕</button>
+        </div>
+      }
+
+      @if (errorBanner) {
+        <div class="banner banner-error" role="alert">
+          <span>{{ errorBanner }}</span>
+          <button type="button" (click)="errorBanner = ''">✕</button>
+        </div>
+      }
+
+      @if (activeView === 'dashboard') {
+        <!-- TARJETAS DE INDICADORES EJECUTIVOS (KPIs) -->
+        <section class="kpi-grid" aria-label="Indicadores operativos">
+          <div class="kpi-card">
+            <span class="kpi-label">Total de Incidencias</span>
+            <strong class="kpi-value">{{ incidents.length }}</strong>
+            <span class="kpi-foot">Registradas en el sistema</span>
+          </div>
+
+          <div class="kpi-card kpi-danger">
+            <span class="kpi-label">Prioridad Alta / Crítica</span>
+            <strong class="kpi-value">{{ totalCriticalCount }}</strong>
+            <span class="kpi-foot">Requieren atención prioritaria</span>
+          </div>
+
+          <div class="kpi-card kpi-blue">
+            <span class="kpi-label">En Atención</span>
+            <strong class="kpi-value">{{ inProgressCount }}</strong>
+            <span class="kpi-foot">Cuadrillas asignadas</span>
+          </div>
+
+          <div class="kpi-card kpi-emerald">
+            <span class="kpi-label">Solucionadas</span>
+            <strong class="kpi-value">{{ resolvedCount }}</strong>
+            <span class="kpi-foot">Concluidas satisfactoriamente</span>
+          </div>
+        </section>
+
+        <!-- BARRA DE FILTROS Y BÚSQUEDA -->
+        <section class="toolbar">
+          <div class="toolbar-filters">
+            <input
+              type="search"
+              class="search-input"
+              [(ngModel)]="searchQuery"
+              placeholder="Buscar por título o descripción..."
+            />
+
+            <select class="filter-select" [(ngModel)]="statusFilter">
+              <option value="todos">Todos los estados</option>
+              <option value="pendiente">Pendientes</option>
+              <option value="en_proceso">En Atención</option>
+              <option value="solucionado">Solucionados</option>
+            </select>
+
+            <select class="filter-select" [(ngModel)]="categoryFilter">
+              <option value="todas">Todas las áreas</option>
+              <option value="bache_vial">Vialidad y Pavimento</option>
+              <option value="fuga_agua">Red Hidráulica y Drenaje</option>
+              <option value="alumbrado_publico">Alumbrado Público</option>
+              <option value="riesgo_electrico">Infraestructura Eléctrica</option>
+              <option value="colapso_estructural">Riesgo Estructural</option>
+            </select>
+          </div>
+
+          <div class="toolbar-actions">
+            <button type="button" class="btn btn-subtle" (click)="refreshData()">
+              Actualizar
+            </button>
+            <button type="button" class="btn btn-primary" (click)="switchView('create')">
+              + Nuevo Reporte
+            </button>
+          </div>
+        </section>
+
+        <!-- LISTADO DE INCIDENCIAS -->
+        @if (isLoading) {
+          <div class="loading-grid">
+            <div class="skeleton-row"></div>
+            <div class="skeleton-row"></div>
+          </div>
+        } @else if (filteredIncidents.length === 0) {
+          <div class="empty-card">
+            <h3>No se encontraron incidencias</h3>
+            <p>Intenta ajustar los filtros de búsqueda o registra un nuevo reporte de campo.</p>
+            <button type="button" class="btn btn-primary" (click)="switchView('create')">
+              Registrar Incidencia
+            </button>
+          </div>
+        } @else {
+          <div class="incidents-grid">
+            @for (item of filteredIncidents; track item.client_uuid) {
+              <article class="incident-card">
+                <div class="incident-card-header">
+                  <div class="badge-group">
+                    <span class="sev-pill" [attr.data-sev]="item.severity">
+                      Prioridad {{ item.severity | titlecase }}
+                    </span>
+                    <span class="cat-pill">{{ formatCategory(item.category) }}</span>
+                  </div>
+
+                  <div class="badge-group">
+                    @if (item.sync_state === 'pending_sync') {
+                      <span class="sync-pill pending">Pendiente de sincronizar</span>
+                    }
+                    <span class="status-pill" [attr.data-status]="item.status">
+                      {{ formatStatus(item.status) }}
+                    </span>
+                  </div>
+                </div>
+
+                <h3 class="incident-title">{{ item.title }}</h3>
+                <p class="incident-description">{{ item.description }}</p>
+
+                @if (item.photo_data) {
+                  <div class="incident-evidence">
+                    <img [src]="item.photo_data" alt="Evidencia fotográfica" loading="lazy" />
+                  </div>
+                }
+
+                <div class="incident-footer">
+                  <div class="coords-info">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>{{ item.latitude }}, {{ item.longitude }}</span>
+                  </div>
+
+                  <div class="workflow-actions">
+                    @if (item.status !== 'en_proceso' && item.status !== 'solucionado') {
+                      <button
+                        type="button"
+                        class="btn btn-subtle btn-xs"
+                        (click)="changeStatus(item, 'en_proceso')"
+                      >
+                        Asignar Atención
+                      </button>
+                    }
+                    @if (item.status !== 'solucionado') {
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-xs"
+                        (click)="changeStatus(item, 'solucionado')"
+                      >
+                        Marcar Solucionado
+                      </button>
+                    }
+                  </div>
+                </div>
+              </article>
+            }
+          </div>
+        }
+      } @else {
+        <!-- ====================================================================
+             VISTA DE REGISTRO DE NUEVA INCIDENCIA
+             ==================================================================== -->
+        <section class="form-wrapper">
+          <div class="form-card">
+            <div class="form-card-header">
+              <div>
+                <h2>Registrar Reporte de Infraestructura</h2>
+                <p>Captura los detalles técnicos, coordenadas GPS y evidencia fotográfica del sitio.</p>
+              </div>
+              <button type="button" class="btn btn-subtle btn-sm" (click)="switchView('dashboard')">
+                Volver al listado
+              </button>
+            </div>
+
+            <form (ngSubmit)="submitIncident()" class="report-form">
+              <div class="field">
+                <label for="rep-title">Título de la Incidencia *</label>
+                <input
+                  id="rep-title"
+                  type="text"
+                  name="title"
+                  [(ngModel)]="title"
+                  placeholder="Ej. Hundimiento de carpeta asfáltica en cruce principal"
+                  required
+                />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="rep-cat">Área / Categoría</label>
+                  <select id="rep-cat" name="category" [(ngModel)]="category">
+                    <option value="bache_vial">Vialidad y Pavimento</option>
+                    <option value="fuga_agua">Red Hidráulica y Drenaje</option>
+                    <option value="alumbrado_publico">Alumbrado Público</option>
+                    <option value="riesgo_electrico">Infraestructura Eléctrica</option>
+                    <option value="colapso_estructural">Riesgo Estructural</option>
+                    <option value="otro">Incidencia General</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="rep-sev">Nivel de Prioridad</label>
+                  <select id="rep-sev" name="severity" [(ngModel)]="severity">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                    <option value="critica">Crítica (Atención Inmediata)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rep-desc">Descripción Detallada *</label>
+                <textarea
+                  id="rep-desc"
+                  name="description"
+                  rows="3"
+                  [(ngModel)]="description"
+                  placeholder="Especifica dimensiones aproximadas, referencias viales y riesgos detectados..."
+                  required
+                ></textarea>
+              </div>
+
+              <!-- SECCIÓN GEOLOCALIZACIÓN -->
+              <div class="section-box">
+                <div class="section-box-head">
+                  <div>
+                    <strong>Georreferenciación del Incidente</strong>
+                    <small>Busca una dirección en el mapa, selecciona el punto exacto o usa tu GPS</small>
+                  </div>
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-subtle btn-sm"
+                      (click)="toggleMapPicker()"
+                    >
+                      {{ isMapOpen ? 'Ocultar Mapa' : 'Buscar por Mapa' }}
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-subtle btn-sm"
+                      (click)="captureGpsLocation()"
+                      [disabled]="isLocatingGps"
+                    >
+                      {{ isLocatingGps ? 'Localizando...' : 'Obtener Ubicación Actual' }}
+                    </button>
+                  </div>
+                </div>
+
+                @if (isMapOpen) {
+                  <div class="map-picker-wrapper">
+                    <div class="map-search-bar">
+                      <input
+                        type="search"
+                        name="mapSearchQuery"
+                        class="map-search-input"
+                        [(ngModel)]="mapSearchQuery"
+                        (keydown.enter)="$event.preventDefault(); searchLocationOnMap()"
+                        placeholder="Buscar calle, colonia, cruzamiento o referencia (ej. Centro, Mérida)..."
+                      />
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-sm"
+                        (click)="searchLocationOnMap()"
+                        [disabled]="isSearchingLocation"
+                      >
+                        {{ isSearchingLocation ? 'Buscando...' : 'Buscar en Mapa' }}
+                      </button>
+                    </div>
+
+                    @if (mapSearchResults.length > 0) {
+                      <ul class="map-search-results" role="listbox">
+                        @for (res of mapSearchResults; track res.place_id) {
+                          <li>
+                            <button
+                              type="button"
+                              class="map-result-item"
+                              (click)="selectSearchResult(res)"
+                            >
+                              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                              </svg>
+                              <span>{{ res.display_name }}</span>
+                            </button>
+                          </li>
+                        }
+                      </ul>
+                    }
+
+                    <div #incidentMap class="incident-map-canvas" aria-label="Mapa interactivo de ubicación"></div>
+
+                    <div class="map-helper-bar">
+                      <span>Haz clic en el mapa o arrastra el marcador verde para ajustar el punto exacto.</span>
+                      @if (selectedAddress) {
+                        <strong class="selected-address-pill">📍 {{ selectedAddress }}</strong>
+                      }
+                    </div>
+                  </div>
+                }
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="rep-lat">Latitud</label>
+                    <input
+                      id="rep-lat"
+                      type="number"
+                      step="0.000001"
+                      name="latitude"
+                      [(ngModel)]="latitude"
+                      (ngModelChange)="onManualCoordsChange()"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="rep-lng">Longitud</label>
+                    <input
+                      id="rep-lng"
+                      type="number"
+                      step="0.000001"
+                      name="longitude"
+                      [(ngModel)]="longitude"
+                      (ngModelChange)="onManualCoordsChange()"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECCIÓN EVIDENCIA FOTOGRÁFICA -->
+              <div class="section-box">
+                <div class="section-box-head">
+                  <div>
+                    <strong>Evidencia Fotográfica</strong>
+                    <small>Toma una fotografía directa con la cámara o adjunta una imagen</small>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-subtle btn-sm" (click)="toggleCamera()">
+                      {{ isCameraOpen ? 'Cerrar Cámara' : 'Usar Cámara' }}
+                    </button>
+                    <label class="btn btn-subtle btn-sm file-btn">
+                      Adjuntar Imagen
+                      <input
+                        type="file"
+                        accept="image/*"
+                        capture="environment"
+                        (change)="onFileSelected($event)"
+                        hidden
+                      />
+                    </label>
+                  </div>
+                </div>
+
+                @if (isCameraOpen) {
+                  <div class="camera-box">
+                    <video #cameraVideo autoplay playsinline muted class="camera-stream"></video>
+                    <button type="button" class="btn btn-primary" (click)="takeSnapshot()">
+                      Capturar Fotografía
+                    </button>
+                  </div>
+                }
+
+                @if (photoData) {
+                  <div class="evidence-preview">
+                    <img [src]="photoData" alt="Vista previa de evidencia" />
+                    <button type="button" class="btn btn-subtle btn-xs" (click)="photoData = null">
+                      Eliminar imagen
+                    </button>
+                  </div>
+                }
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-subtle" (click)="switchView('dashboard')">
+                  Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                  {{ isSubmitting ? 'Guardando reporte...' : 'Guardar Reporte' }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      }
+    </main>
+  </div>
+}
