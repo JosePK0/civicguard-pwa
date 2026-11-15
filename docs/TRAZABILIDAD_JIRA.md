@@ -33,3 +33,4 @@
 | `CIV-34` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear StoreIncidentRequest con validación estricta de coordenadas GPS (-90..90, -180..180), categorías urbanas y fotografías base64 |
 | `CIV-35` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentService en Laravel con lógica de upsert idempotente por client_uuid para evitar duplicados en reintentos de red |
 | `CIV-36` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentController RESTful (GET/POST /api/v1/incidents, PATCH /status, POST /sync) con soporte de lotes offline |
+| `CIV-37` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar IndexedDbService (indexed-db.service.ts) con almacenes transaccionales incidents, sync_queue y auth_session (cero localStorage) |
