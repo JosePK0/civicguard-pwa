@@ -35,3 +35,4 @@
 | `CIV-36` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentController RESTful (GET/POST /api/v1/incidents, PATCH /status, POST /sync) con soporte de lotes offline |
 | `CIV-37` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar IndexedDbService (indexed-db.service.ts) con almacenes transaccionales incidents, sync_queue y auth_session (cero localStorage) |
 | `CIV-38` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar HardwareService (hardware.service.ts) integrando Geolocation API de alta precisión y MediaDevices Camera API con compresión |
+| `CIV-39` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar IncidentService en Angular con algoritmo resiliente Network-First y fallback automático a IndexedDB en Modo Avión |
