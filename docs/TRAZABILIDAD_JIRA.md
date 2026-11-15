@@ -29,3 +29,4 @@
 | `CIV-30` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar AuthController en Laravel (/api/v1/auth/login, /register, /me, /logout) con respuestas JSON sin caché HTTP |
 | `CIV-31` | Sprint 2 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar el Mapeo del Ciclo de Vida del Service Worker (docs/semana-2-mapeo-ciclo-vida-sw.md) con diagramas de transición |
 | `CIV-32` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear migración de tabla incidents con client_uuid único (idempotencia offline), categoría, severidad, latitud, longitud y foto |
+| `CIV-33` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo Eloquent Incident con casts tipados para coordenadas geográficas y marca temporal de sincronización |
