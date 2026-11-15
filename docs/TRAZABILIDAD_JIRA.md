@@ -36,3 +36,4 @@
 | `CIV-37` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar IndexedDbService (indexed-db.service.ts) con almacenes transaccionales incidents, sync_queue y auth_session (cero localStorage) |
 | `CIV-38` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar HardwareService (hardware.service.ts) integrando Geolocation API de alta precisión y MediaDevices Camera API con compresión |
 | `CIV-39` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar IncidentService en Angular con algoritmo resiliente Network-First y fallback automático a IndexedDB en Modo Avión |
+| `CIV-40` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Integrar Background Sync API (sync.register('civicguard-sync-incidents')) en Service Worker y resincronización al evento window online |
