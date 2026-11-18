@@ -53,3 +53,4 @@
 | `CIV-54` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Crear suite de pruebas automatizadas del backend en tests/Feature/CivicGuardApiTest.php (Health, CRUD, Idempotencia Offline, Push y Auth) |
 | `CIV-55` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Ejecutar auditoría de conformidad con Google Lighthouse bajo simulación 3G alcanzando puntaje >90/100 en PWA, Performance y Accessibility |
 | `CIV-56` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar Reporte del Plan de Pruebas, métricas de Google Lighthouse y guía de despliegue HTTPS (docs/semana-4-reporte-pruebas-despliegue.md) |
+| `CIV-57` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Validar compilación de producción de la PWA (ng build --configuration production) y verificar funcionamiento integral offline/online |
