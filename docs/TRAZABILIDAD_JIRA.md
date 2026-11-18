@@ -45,3 +45,4 @@
 | `CIV-46` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Crear migración de tabla push_subscriptions y modelo Eloquent PushSubscription para endpoints Web Push |
 | `CIV-47` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar PushSubscriptionController (GET /api/v1/push/vapid-public-key, POST /subscribe y POST /broadcast) |
 | `CIV-48` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar WebPushService en Laravel con generación de llaves VAPID y despacho de notificaciones al cambiar estatus de incidencia |
+| `CIV-49` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Crear DatabaseSeeder con usuarios operadores/despachadores de prueba e incidencias urbanas georreferenciadas iniciales |
