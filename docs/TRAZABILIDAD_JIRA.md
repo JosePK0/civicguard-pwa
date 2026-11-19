@@ -41,3 +41,4 @@
 | `CIV-42` | Sprint 3 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar formulario reactivo de captura de incidencias urbanas con selector de severidad, visor de cámara en vivo y captura de foto |
 | `CIV-43` | Sprint 3 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar panel de telemetría GPS con coordenadas en tiempo real, precisión en metros y bandeja de cola de sincronización offline |
 | `CIV-44` | Sprint 3 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar tablero de monitoreo de incidencias con filtros por estatus (Reportada, En Atención, Resuelta) y distintivos de sincronización |
+| `CIV-45` | Sprint 3 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar el Módulo Operativo Offline (docs/semana-3-modulo-operativo-offline.md) y protocolo de pruebas en Modo Avión |
