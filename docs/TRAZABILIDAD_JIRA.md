@@ -24,3 +24,6 @@
 | `CIV-25` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Configurar Splash-screen y Home-screen nativas mediante Maskable Icons (purpose: any y maskable) en manifest.json |
 | `CIV-26` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Implementar modelo de renderizado mixto: placeholders estructurales estáticos en index.html e hidratación CSR en Angular |
 | `CIV-27` | Sprint 2 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar barra superior del Application Shell con indicadores en tiempo real de estado de red (Online / Modo Avión) y estado del SW |
+| `CIV-28` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Crear migración relacional de tabla users y migración add_role_and_token_to_users_table para operadores de campo y despachadores |
+| `CIV-29` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo User con roles operativos (dispatcher / operator), hashing bcrypt de contraseñas y tokens de sesión |
+| `CIV-30` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar AuthController en Laravel (/api/v1/auth/login, /register, /me, /logout) con respuestas JSON sin caché HTTP |
