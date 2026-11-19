@@ -50,3 +50,7 @@
 | `CIV-51` | Sprint 4 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Integrar suscripción Web Push VAPID y disparo de notificaciones locales/remotas desde SwManagerService en Angular |
 | `CIV-52` | Sprint 4 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar pantalla de inicio de sesión y registro empresarial en app.component con cambio de rol e indicadores de notificación Push |
 | `CIV-53` | Sprint 4 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Optimizar contraste cromático WCAG AA, etiquetas ARIA y diseño responsivo móvil/escritorio para certificación de accesibilidad |
+| `CIV-54` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Crear suite de pruebas automatizadas del backend en tests/Feature/CivicGuardApiTest.php (Health, CRUD, Idempotencia Offline, Push y Auth) |
+| `CIV-55` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Ejecutar auditoría de conformidad con Google Lighthouse bajo simulación 3G alcanzando puntaje >90/100 en PWA, Performance y Accessibility |
+| `CIV-56` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar Reporte del Plan de Pruebas, métricas de Google Lighthouse y guía de despliegue HTTPS (docs/semana-4-reporte-pruebas-despliegue.md) |
+| `CIV-57` | Sprint 4 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Validar compilación de producción de la PWA (ng build --configuration production) y verificar funcionamiento integral offline/online |
