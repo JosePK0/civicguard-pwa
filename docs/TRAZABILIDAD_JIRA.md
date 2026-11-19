@@ -46,3 +46,5 @@
 | `CIV-47` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar PushSubscriptionController (GET /api/v1/push/vapid-public-key, POST /subscribe y POST /broadcast) |
 | `CIV-48` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar WebPushService en Laravel con generación de llaves VAPID y despacho de notificaciones al cambiar estatus de incidencia |
 | `CIV-49` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Crear DatabaseSeeder con usuarios operadores/despachadores de prueba e incidencias urbanas georreferenciadas iniciales |
+| `CIV-50` | Sprint 4 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar manejadores de eventos push y notificationclick en public/sw.js para mostrar alertas nativas del sistema operativo |
+| `CIV-51` | Sprint 4 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Integrar suscripción Web Push VAPID y disparo de notificaciones locales/remotas desde SwManagerService en Angular |
