@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>CivicGuard — Gestión de Infraestructura Urbana</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Plataforma de Gestión de Emergencias e Incidencias en Infraestructura Urbana">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CivicGuard">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <script>
+    (async function () {
+      if ('caches' in window) {
+        const keys = await caches.keys();
+        let purged = false;
+        for (const key of keys) {
+          if (key.includes('v1.0.0')) {
+            await caches.delete(key);
+            purged = true;
+          }
+        }
+        if (purged && 'serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          for (const r of regs) await r.update();
+          window.location.reload();
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <app-root>
+    <div class="app-shell-loader" role="status" aria-label="Cargando CivicGuard">
+      <header class="shell-header">
+        <div class="shell-brand">
+          <div class="shell-logo"></div>
+          <div>
+            <strong>CivicGuard</strong>
+            <span>Infraestructura Urbana</span>
+          </div>
+        </div>
+      </header>
+      <main class="shell-body">
+        <div class="shell-card"></div>
+      </main>
+    </div>
+  </app-root>
+  <noscript>
+    <p style="padding: 2rem; color: #f8fafc; background: #0f172a;">
+      Se requiere habilitar JavaScript para utilizar CivicGuard.
+    </p>
+  </noscript>
+</body>
+</html>
