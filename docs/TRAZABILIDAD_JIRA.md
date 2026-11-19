@@ -28,3 +28,8 @@
 | `CIV-29` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo User con roles operativos (dispatcher / operator), hashing bcrypt de contraseñas y tokens de sesión |
 | `CIV-30` | Sprint 2 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar AuthController en Laravel (/api/v1/auth/login, /register, /me, /logout) con respuestas JSON sin caché HTTP |
 | `CIV-31` | Sprint 2 | Jose Antonio De Jesus Pool Ku | @JosePK0 | Documentar el Mapeo del Ciclo de Vida del Service Worker (docs/semana-2-mapeo-ciclo-vida-sw.md) con diagramas de transición |
+| `CIV-32` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear migración de tabla incidents con client_uuid único (idempotencia offline), categoría, severidad, latitud, longitud y foto |
+| `CIV-33` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar modelo Eloquent Incident con casts tipados para coordenadas geográficas y marca temporal de sincronización |
+| `CIV-34` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Crear StoreIncidentRequest con validación estricta de coordenadas GPS (-90..90, -180..180), categorías urbanas y fotografías base64 |
+| `CIV-35` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentService en Laravel con lógica de upsert idempotente por client_uuid para evitar duplicados en reintentos de red |
+| `CIV-36` | Sprint 3 | Cristian Isaac Llanes Puc | @LlanesGood | Implementar IncidentController RESTful (GET/POST /api/v1/incidents, PATCH /status, POST /sync) con soporte de lotes offline |
