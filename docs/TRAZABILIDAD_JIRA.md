@@ -48,3 +48,5 @@
 | `CIV-49` | Sprint 4 | Cristian Isaac Llanes Puc | @LlanesGood | Crear DatabaseSeeder con usuarios operadores/despachadores de prueba e incidencias urbanas georreferenciadas iniciales |
 | `CIV-50` | Sprint 4 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar manejadores de eventos push y notificationclick en public/sw.js para mostrar alertas nativas del sistema operativo |
 | `CIV-51` | Sprint 4 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Integrar suscripción Web Push VAPID y disparo de notificaciones locales/remotas desde SwManagerService en Angular |
+| `CIV-52` | Sprint 4 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar pantalla de inicio de sesión y registro empresarial en app.component con cambio de rol e indicadores de notificación Push |
+| `CIV-53` | Sprint 4 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Optimizar contraste cromático WCAG AA, etiquetas ARIA y diseño responsivo móvil/escritorio para certificación de accesibilidad |
