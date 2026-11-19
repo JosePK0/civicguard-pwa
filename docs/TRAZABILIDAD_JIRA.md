@@ -38,3 +38,6 @@
 | `CIV-39` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar IncidentService en Angular con algoritmo resiliente Network-First y fallback automático a IndexedDB en Modo Avión |
 | `CIV-40` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Integrar Background Sync API (sync.register('civicguard-sync-incidents')) en Service Worker y resincronización al evento window online |
 | `CIV-41` | Sprint 3 | Luis Gerardo Diaz Pardenilla | @ShakerCandle694 | Implementar AuthService en Angular con persistencia de sesión asíncrona en IndexedDB para permitir inicio de sesión en Modo Avión |
+| `CIV-42` | Sprint 3 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar formulario reactivo de captura de incidencias urbanas con selector de severidad, visor de cámara en vivo y captura de foto |
+| `CIV-43` | Sprint 3 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar panel de telemetría GPS con coordenadas en tiempo real, precisión en metros y bandeja de cola de sincronización offline |
+| `CIV-44` | Sprint 3 | Alexis Alexander Bolio Chan | @AlexanderPlusD | Diseñar tablero de monitoreo de incidencias con filtros por estatus (Reportada, En Atención, Resuelta) y distintivos de sincronización |
